@@ -65,4 +65,10 @@ function initFeatureForm(formId, endpoint, renderFn, bodyFn) {
 /* Sidebar toggle for mobile */
 document.getElementById("menu-toggle")?.addEventListener("click", () => {
   document.getElementById("sidebar")?.classList.toggle("open");
+  document.getElementById("sidebar-overlay")?.classList.toggle("show");
+});
+
+document.getElementById("sidebar-overlay")?.addEventListener("click", () => {
+  document.getElementById("sidebar")?.classList.remove("open");
+  document.getElementById("sidebar-overlay")?.classList.remove("show");
 });
