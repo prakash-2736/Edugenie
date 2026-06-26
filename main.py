@@ -2,7 +2,7 @@ import asyncio
 from pathlib import Path
 
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, Field
@@ -92,6 +92,11 @@ async def run_ai(func, *args):
 
 
 # --- Page routes ---
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    return FileResponse(BASE_DIR / "static" / "edugenie.png")
+
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
