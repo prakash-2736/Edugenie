@@ -38,11 +38,11 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ## Deployed Website Link
 
-open [https://edugenie-k4z7.onrender.com/](Edugenie)
+open [https://edugenie-k4z7.onrender.com/](https://edugenie-k4z7.onrender.com/)
 
 or 
 
-open [https://edugenie-opal.vercel.app/](Edugenie)
+open [https://edugenie-opal.vercel.app/](https://edugenie-opal.vercel.app/)
 
 
 
