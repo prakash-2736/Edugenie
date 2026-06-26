@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h2>Your AI Learning Companion</h2>
+  <p>Ask questions, explore topics, take quizzes, summarize notes, and get personalized learning paths — all powered by Google Gemini.</p>
+</section>
+
+<div class="feature-grid">
+  <a href="/qa" class="feature-card">
+    <span class="feature-card-icon">❓</span>
+    <h3>Ask a Question</h3>
+    <p>Get clear answers with explanations and extra learning points.</p>
+  </a>
+  <a href="/explain" class="feature-card">
+    <span class="feature-card-icon">💡</span>
+    <h3>Explain a Topic</h3>
+    <p>Understand any concept with definitions, examples, and key points.</p>
+  </a>
+  <a href="/quiz" class="feature-card">
+    <span class="feature-card-icon">📝</span>
+    <h3>Take a Quiz</h3>
+    <p>Generate MCQs, answer them, and see your score instantly.</p>
+  </a>
+  <a href="/summarize" class="feature-card">
+    <span class="feature-card-icon">📄</span>
+    <h3>Summarize Text</h3>
+    <p>Turn long educational content into concise summaries.</p>
+  </a>
+  <a href="/learning-path" class="feature-card">
+    <span class="feature-card-icon">🗺️</span>
+    <h3>Learning Path</h3>
+    <p>Get a structured roadmap from beginner to advanced.</p>
+  </a>
+</div>
+{% endblock %}

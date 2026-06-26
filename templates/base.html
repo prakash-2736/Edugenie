@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}EduGenie{% endblock %} – AI Learning Assistant</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <a href="/">
+          <span class="brand-icon">🎓</span>
+          <span class="brand-text">EduGenie</span>
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        {% for key, page in pages.items() %}
+        <a href="{% if key == 'index' %}/{% elif key == 'learning_path' %}/learning-path{% else %}/{{ key }}{% endif %}"
+           class="nav-link{% if active == key %} active{% endif %}">
+          <span class="nav-icon">{{ page.icon }}</span>
+          <span class="nav-label">{{ page.title }}</span>
+        </a>
+        {% endfor %}
+      </nav>
+      <p class="sidebar-footer">Powered by Gemini</p>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="topbar">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <h1 class="page-title">{% block page_heading %}{{ pages[active].title }}{% endblock %}</h1>
+      </header>
+
+      <main class="page-content">
+        {% block content %}{% endblock %}
+      </main>
+
+      <footer class="site-footer">
+        <p>EduGenie &mdash; Built with FastAPI + Google Gemini</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
